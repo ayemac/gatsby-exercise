@@ -1,11 +1,15 @@
+/*
+ Header Component
+ Rather than hardcoding the heading copy and the link,I decided to pass in variables so the code can be future-proof
+incase the copy or the hyperlink ever needed to be changed.
+*/
+
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ copy, link }) => (
   <header
     style={{
-      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -13,20 +17,16 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1.45rem 1.45rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      {/* Hyperlink tag that in link prop, I got rid of the underline because the instructions didn't say the header needed to be styled with an underline. */}
+      <a href={link} style={{ textDecoration: `none` }}>
+        {/* H1 Section heading displays copy prop in red */}
+        <h1 style={{ margin: 0, color: `red` }}>
+          {copy}
+        </h1>
+      </a>
     </div>
   </header>
 )
