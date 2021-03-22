@@ -6,10 +6,12 @@ import PropTypes from "prop-types"
 import Layout from '../components/layout';
 import Video from '../components/Video'
 
-const Homepage = ({ }) => {
+const Homepage = ({ }) => (
     <Layout>
         <Video />
     </Layout>
-}
+
+)
+
 
 export default Homepage;
